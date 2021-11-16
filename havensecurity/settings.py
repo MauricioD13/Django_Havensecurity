@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from os import environ
-
+import djang_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -155,3 +155,4 @@ MEDIA_URL = '/media/'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dashboard:dashboard'
 
+django_heroku.settings(locals())
