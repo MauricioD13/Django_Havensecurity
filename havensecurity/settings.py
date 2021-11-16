@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l^yulhe%&!iwpju-&l(az#=6$zy#xwa(&j2cf!f=2m+&8yqqxw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['havensec.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['havensec.herokuapp.com']
 
 
 # Application definition
@@ -48,7 +48,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -130,11 +129,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-STATIC_ROOT = BASE_DIR / 'static'
+#STATIC_ROOT = BASE_DIR / 'static'
 STATIC_URL = '/static/'
-"""STATICFILES_DIRS = (
+STATICFILES_DIRS = (
     BASE_DIR / 'static',
-)"""
+)
 #Funcionamiento del css
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
