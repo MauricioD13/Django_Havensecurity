@@ -20,12 +20,12 @@
         </h6>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">
+            <a class="nav-link active" aria-current="page" href="{% url 'dashboard:dashboard' %}">
               <span data-feather="home"></span>
               Temperatura y Gas
             </a>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'dashboard_rfid' %}">
+            <a class="nav-link" href="{% url 'dashboard:dashboard_rfid' %}">
               <span data-feather="users"></span>
               RFID y Camara
             </a>
@@ -45,7 +45,7 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">
+            <a class="nav-link" href="{% url 'users:logout' %}">
               <span data-feather="file-text"></span>
               Logout
             </a>
@@ -69,6 +69,11 @@
             <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1509577/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
         </div>
     </div>
+    <h2 class="w3-wide w3-serif">Enciende y apaga el ventilador</h2>
+    <button id="b_on" onclick="ventilador_on()" class="w3-button w3-gray w3-text-white w3-round-large w3-serif">ON</button>
+    <button id="b_off" onclick="ventilador_off()" class="w3-button w3-gray w3-text-white w3-round-large w3-serif">OFF</button>
+
+    <!--------TABLE--------->
 
         <h2>Section title</h2>
       <div class="table-responsive">
@@ -100,7 +105,30 @@
     </main>
   </div>
 </div>
-
+<script>
+  function ventilador_on() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        Exito_on = this.responseText;
+      }
+    };
+    xhttp.open("POST", "https://api.thingspeak.com/update?api_key=MT0JJEJYRP9MXT7X&field4=1", true);
+    xhttp.send();
+    
+  }
+  function ventilador_off() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        Exito_off = this.responseText;
+      }
+    };
+    xhttp.open("POST", "https://api.thingspeak.com/update?api_key=MT0JJEJYRP9MXT7X&field4=0", true);
+    xhttp.send();
+    
+  }
+</script>
 
 
 {% endblock %}

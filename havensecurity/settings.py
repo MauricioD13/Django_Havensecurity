@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+from os import environ
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l^yulhe%&!iwpju-&l(az#=6$zy#xwa(&j2cf!f=2m+&8yqqxw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['havensec.herokuapp.com']
 
 
 # Application definition
@@ -83,11 +84,14 @@ WSGI_APPLICATION = 'havensecurity.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd37kl4l6g0teni',
+        'USER':'jprfpgtoydvzgk',
+        'PASSWORD':'198bce7ea665f0d7a48e6292890fdf20d9f6abec2141c48928a68d488d6227a6',
+        'HOST': 'ec2-67-202-36-228.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -144,3 +148,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
 LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'dashboard:dashboard'
+
+prod_db = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)

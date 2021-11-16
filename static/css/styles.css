@@ -11487,7 +11487,7 @@ body {
   outline: none;
 }
 #mainNav .navbar-brand {
-  color: #000;
+  color: #ff8000;
   font-weight: 700;
   padding: 0.9rem 0;
 }
@@ -11510,15 +11510,15 @@ body {
   }
   #mainNav .navbar-brand {
     padding: 0.5rem 0;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 128, 0, 0.9);
   }
   #mainNav .nav-link {
     transition: none;
     padding: 2rem 1.5rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 128, 0, 0.8);
   }
   #mainNav .nav-link:hover {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 128, 0, 0.75);
   }
   #mainNav .nav-link:active {
     color: #fff;
@@ -11563,7 +11563,7 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../img/Logo.png");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../img/Logo.png");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -11574,7 +11574,7 @@ body {
   font-size: 2.5rem;
   line-height: 2.5rem;
   letter-spacing: 0.8rem;
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  background: linear-gradient(rgba(255, 128, 0, 0.9), rgba(255, 255, 255, 0.5));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
           background-clip: text;

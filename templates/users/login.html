@@ -9,12 +9,12 @@
     {% load static %}
     <div class="container" id="auth-container">
         <div class="row" id="auth-row">
-            <form method="POST" action="{% url 'login'%}" id="form-login">
+            <form method="POST" action="{% url 'users:login'%}" id="form-login">
                 {% csrf_token %}
                 <!--img class="mb-6" src="{% static 'img/Logo.png' %}" alt='' id="login-logo" width="400" height="150" style="position: center;"-->
                 <h1 class="h3 mb-3 fw-normal">Sign in</h1>
-                {% if error %}
-                    <p class="alert alert-danger"> {{ error }}</p>
+                {% if form.errors %}
+                    <p class="alert alert-danger"> Usuario o contraseña no es correcto</p>
                 {% endif %}
                 <div class="form-floating">
                   <input type="text" class="form-control" id="username" name='username' placeholder="name@example.com">

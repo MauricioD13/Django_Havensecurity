@@ -11,14 +11,5 @@ class Profile(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
-    """
-    picture = models.ImageField(
-        upload_to='users/pictures',
-        blank=True,
-        null=True
-    )
-    Hay que instalar pillow (pip install pillow)           
-    """
-
     def __str__(self):
         return self.user.username

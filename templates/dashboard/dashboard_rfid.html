@@ -20,12 +20,12 @@
         </h6>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'dashboard' %}">
+            <a class="nav-link" aria-current="page" href="{% url 'dashboard:dashboard' %}">
               <span data-feather="home"></span>
               Temperatura y Gas
             </a>
           <li class="nav-item">
-            <a class="nav-link active" href="{% url 'dashboard_rfid' %}">
+            <a class="nav-link active" href="{% url 'dashboard:dashboard_rfid' %}">
               <span data-feather="users"></span>
               RFID y Camara
             </a>
@@ -45,7 +45,7 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">
+            <a class="nav-link" href="{% url 'users:logout' %}">
               <span data-feather="file-text"></span>
               Logout
             </a>
@@ -60,15 +60,7 @@
       </div>
 
 
-<!------------THINGSPEAK----------->
-    <div class="row">
-        <div class="col-lg-8">
-            <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1509577/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
-          </div>
-        <div class="col-lg-8">
-            <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1509577/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
-        </div>
-    </div>
+      <img src="{% static 'img/industrial00.jpeg' %}" alt=''>
 
         <h2>RFID y Fotos</h2>
       <div class="table-responsive">
@@ -86,7 +78,8 @@
             <tr>
                 <td>#</td>
                 <td>{{ key }}</td>
-              <td>{{ value }} </td>
+              <td><button class="w-25 btn btn-primary" type="submit">{{ value }}</button>
+              </td>
 
             </tr>
           {% endfor %}

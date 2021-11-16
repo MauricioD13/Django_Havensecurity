@@ -9,7 +9,7 @@
     {% load static %}
     <div class="container" id="auth-container">
     <div class="row" id="auth-row">
-        <form method="POST" action="{% url 'signup'%}">
+        <form method="POST" action="{% url 'users:signup'%}">
             {% csrf_token %}
             <!--img class="mb-6" src="{% static 'img/Logo.png' %}" alt='' id="login-logo" width="400" height="150"-->
             <h1 class="h3 mb-3 fw-normal">Registro</h1>
