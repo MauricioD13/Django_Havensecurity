@@ -59,7 +59,6 @@
         <h1 class="h2">Dashboard</h1>
       </div>
 
-
 <!------------THINGSPEAK----------->
     <div class="row">
         <div class="col-lg-8">
@@ -70,8 +69,8 @@
         </div>
     </div>
     <h2 class="w3-wide w3-serif">Enciende y apaga el ventilador</h2>
-    <button id="b_on" onclick="ventilador_on()" class="w3-button w3-gray w3-text-white w3-round-large w3-serif">ON</button>
-    <button id="b_off" onclick="ventilador_off()" class="w3-button w3-gray w3-text-white w3-round-large w3-serif">OFF</button>
+    <button id="b_on" onclick="ventilador_on()" class="btn btn-dark">ON</button>
+    <button id="b_off" onclick="ventilador_off()" class="btn btn-dark">OFF</button>
 
     <!--------TABLE--------->
 
@@ -88,16 +87,19 @@
           </thead>
           <tbody>
           {{ context }}
-          {% for key, value in gas.items %}
-              {% for t in temp %}
+          {% for t in time %}
+          {% for g_value in gas %}
+              {% for t_value in temp %}
+              
             <tr>
                 <td>#</td>
-              <td>{{ value }} </td>
-                <td>{{ t }}°C</td>
-              <td>{{ key }} ppm</td>
+              <td>{{ t }} </td>
+              <td>{{ t_value }}°C</td>
+              <td>{{ g_value }} ppm</td>
             {% endfor %}
 
             </tr>
+          {% endfor %}
           {% endfor %}
           </tbody>
         </table>

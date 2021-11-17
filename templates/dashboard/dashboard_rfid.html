@@ -60,7 +60,7 @@
       </div>
 
 
-      <img src="{% static 'img/industrial00.jpeg' %}" alt=''>
+      <img src="{{ photo_id }}" alt='' style='width: 100px'>
 
         <h2>RFID y Fotos</h2>
       <div class="table-responsive">
@@ -78,8 +78,10 @@
             <tr>
                 <td>#</td>
                 <td>{{ key }}</td>
-              <td><button class="w-25 btn btn-primary" type="submit">{{ value }}</button>
+              <td>
+                <a href="{{ value }}">Img</a>
               </td>
+
 
             </tr>
           {% endfor %}
