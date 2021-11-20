@@ -33,7 +33,7 @@ def index(request):
     return redirect('haven')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     
     path('dashboard/',include(('dashboard.urls','dashboard'), namespace='dashboard')),
 
