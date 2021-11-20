@@ -8,11 +8,11 @@ from dashboard import views
 urlpatterns = [
     
     path(
-        route='dashboard',
+        route='dashboard/',
         view=views.dashboard, 
         name='dashboard'),
     path(
-        route='rfid',
+        route='rfid/',
         view=views.dashboard_rfid,
         name='dashboard_rfid'),
     
