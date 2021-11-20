@@ -13,21 +13,23 @@ import json
 #Dropbox
 
 import dropbox
+import os
 
-dbx = dropbox.Dropbox('KxL2v9KtxYwAAAAAAAAAAblg3U4IVJ9YS8iNJI2yowo9o6jv9l-6hVggIyRS49eq')
+
+dbx = dropbox.Dropbox(os.environ['DROPBOX_APIKEY'])
 http = urllib3.PoolManager()
 
 results = 10
-
 
 @login_required
 def dashboard(request):
     temp_values = []
     gas_values = []
     timestamp_values = []
-    timestamp_str = http.request('GET', 'https://api.thingspeak.com/channels/1509577/fields/3.json?results=10')
-    temp_str = http.request('GET','https://api.thingspeak.com/channels/1509577/fields/1.json?results=10')
-    gas_str = http.request('GET','https://api.thingspeak.com/channels/1509577/fields/2.json?results=10')
+    
+    timestamp_str = http.request('GET', f'https://api.thingspeak.com/channels/1509577/fields/3.json?results={results}')
+    temp_str = http.request('GET',f'https://api.thingspeak.com/channels/1509577/fields/1.json?results={results}')
+    gas_str = http.request('GET',f'https://api.thingspeak.com/channels/1509577/fields/2.json?results={results}')
     timestamp = json.loads(timestamp_str.data)
     temp = json.loads(temp_str.data)
     gas = json.loads(gas_str.data)
@@ -64,7 +66,7 @@ def dashboard_rfid(request):
     
     if request.method == 'POST':
         new_ids = request.POST['photo_id_change']
-        print(new_ids)
+        
     return render(request, 'dashboard/dashboard_rfid.html', {
         'photo_id': photo_id,
         'ids': ids,

@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from os import environ
+import os
 import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,13 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l^yulhe%&!iwpju-&l(az#=6$zy#xwa(&j2cf!f=2m+&8yqqxw'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-#ALLOWED_HOSTS = ['havensec.herokuapp.com']
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['havensec.herokuapp.com']
+#ALLOWED_HOSTS = ['localhost']
 
 # Application definition
 
@@ -86,9 +86,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd37kl4l6g0teni',
-        'USER':'jprfpgtoydvzgk',
-        'PASSWORD':'198bce7ea665f0d7a48e6292890fdf20d9f6abec2141c48928a68d488d6227a6',
-        'HOST': 'ec2-67-202-36-228.compute-1.amazonaws.com',
+        'USER': os.environ['DB_USER'],
+        'PASSWORD':os.environ['DB_PASS'],
+        'HOST': os.environ['DB_HOST'],
         'PORT': '5432'
     }
 }
