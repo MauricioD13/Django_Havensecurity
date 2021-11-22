@@ -37,8 +37,8 @@
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class='col-lg-10'>
-                        <p class="text-white-50" style='font-size:20px; text-align:justify'> Los datos se tomarán de los sensores de RFID y de temperatura. Cada ID del sensor RFID irá acopañado por una 
-                            imagen tomada por la camara para Raspberry Pi 
+                        <p class="text-white-50" style='font-size:20px; text-align:justify'> Los datos son tomados de los sensores de RFID y de temperatura. Cada ID del sensor RFID irá acopañado por una 
+                            imagen tomada por la cámara para Raspberry Pi 
                         </p>
                     </div>    
                 </div>
@@ -48,13 +48,34 @@
                     </div>    
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class='col-lg-10'>
+                        <p class="text-white-50" style='font-size:20px; text-align:justify'> El almacenamiento de los usuarios se hace mediante una base de datos relacional Postgresql. Mediante
+                            el ORM (Object Relational Mapper) de Django se hacen las consultas desde la página web.
+                        </p>
+                    </div>    
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class='col-lg-12'>
                         <img class="img-fluid" src="{% static 'img/analitica.png' %}" alt="..." />
                     </div>    
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class='col-lg-10'>
+                        <p class="text-white-50" style='font-size:20px; text-align:justify'> Gracias a las utilidades que proporciona la plataforma Thingspeak se hizo un análisis de los 
+                            datos obtenidos anteriormente.
+                        </p>
+                    </div>    
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class='col-lg-12'>
                         <img class="img-fluid" src="{% static 'img/visualizacion.png' %}" alt="..." />
+                    </div>    
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class='col-lg-10'>
+                        <p class="text-white-50" style='font-size:20px; text-align:justify'> La página web de HavenSecurity tiene un dashboard que integra la información de los sensores y 
+                            las imagenes tomadas por la Raspberry
+                        </p>
                     </div>    
                 </div>
             </div>
@@ -98,7 +119,7 @@
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">Camara Raspberry Pi</h4>
+                                    <h4 class="text-white">Cámara Raspberry Pi</h4>
                                     <p class="mb-0 text-white-50">Módulo con Cámara diseñado especialmente para Raspberry Pi.
             Se conecta en uno de los dos pequeños sockets que tiene la
             tarjeta Raspberry en su cara superior. Esta conexión, usa
