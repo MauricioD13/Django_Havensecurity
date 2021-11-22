@@ -157,6 +157,7 @@ Editaremos el detalle para que sea igual de complejo que el detalle de Usuario y
 
 En la documentación de Django, https://docs.djangoproject.com/en/2.0/ref/contrib/admin/ podemos ver cómo funcionan los fieldsets.
 
+
 # Creando modelos
 
 Para reflejar los cambios en la base de datos, siempre que se crea o se edita un modelo debemos cancelar el server, ejecutar makemigrations, migrate y luego de nuevo volver a correr el servidor con runserver.
@@ -169,3 +170,4 @@ Los templates quedarán definidos en un nuevo folder que llamaremos /templates/.
 El concepto de archivos estáticos en Django, son archivos que se usan a través de la aplicación para pintar los datos. Pueden ser archivos de imagen, audio y video, o archivos css y scripts js.
 
 Para servir archivos estáticos, nos apoyamos en STATIC_ROOT y STATIC_URLS.
+
